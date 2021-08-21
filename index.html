@@ -18,7 +18,7 @@
       height: 100%;
     }
 
-    body {
+    .login {
       display: -ms-flexbox;
       display: flex;
       -ms-flex-align: center;
@@ -36,33 +36,35 @@
       margin: auto;
     }
   </style>
-    <!-- <main role="main">
-      <section class="jumbotron text-center">
-        <div class="m-3">
-          <h1></h1>
-        </div>
-      </section>
-    </main> -->
 </head>
 
-<body class="text-center">  
-  <form action = "indexhome.html" method="POST">
-      <h5>
+<body>  
+  <main role="main">
+    <section class="jumbotron text-center">
+      <div class="m-5">
+        <h1></h1>
+      </div>
+    </section>
+    <div class="login">
+      <form action = "indexhome.html" method="POST">
+        <h5>
         Login
-      </h5>
-       <p>
-      User:
-      </p>
-       <input type="text" name="user" id="user" required>
-       <p>
+        </h5>
+        <p>
+        User:
+        </p>
+        <input type="text" name="user" id="user" required>
+        <p>
         <br>
         Password:
         </p>
-         <input type="password" name="password" id="password" required>
+        <input type="password" name="password" id="password" required>
         <br>
         <br>
         <button type="submit" id="sendBtn">Sign in</button>
-  </form>
+      </form>
+    </div>
+  </main>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
