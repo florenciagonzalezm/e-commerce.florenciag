@@ -7,13 +7,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
     .then(info => info.json())
     .then(data => {
         for(let i = 0; i < data.length; i++){
-            let lista = data[i];
-            let nombre = lista.name;
-            let descripcion = lista.description;
-            let costo = lista.cost;
-            let moneda = lista.currency;
-            let foto = lista.imgSrc;
-            let totalvendidos = lista.soldCount;
+            let nombre = data.name;
+            let descripcion = data.description;
+            let costo = data.cost;
+            let moneda = data.currency;
+            let foto = data.imgSrc;
+            let totalvendidos = data.soldCount;
 
             document.getElementById("prod-list-container").innerHTML += `
             <a href="product-info.html" class="list-group-item list-group-item-action">
