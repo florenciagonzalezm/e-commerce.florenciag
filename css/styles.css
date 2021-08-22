@@ -19,6 +19,20 @@
   font-weight: bold;
 }
 
+/* Para que la imagen login quede en el index */
+.imagenlogin {
+  height: 50vh;
+  padding: 5em inherit;
+  margin-bottom: 0;
+  background-color: #53C0FB;
+  background: url('../img/login.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  font-weight: bold;
+}
+
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: 6rem;
@@ -138,40 +152,4 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
-}
-
-/* Para que la imagen login quede bien */
-.imagenlogin {
-  height: 50vh;
-  padding: 5em inherit;
-  margin-bottom: 0;
-  background-color: #53C0FB;
-  background: url('../img/login.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: black;
-  font-weight: bold;
-}
-
-.imagenlogin .container {
-  max-width: 40rem;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  text-shadow: 1px 1px 2px grey;
-}
-
-@media (min-width: 768px) {
-  .imagenlogin {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
-
-.imagenlogin p:last-child {
-  margin-bottom: 0;
-}
-
-.imagenlogin-heading {
-  font-weight: 300;
 }
