@@ -32,6 +32,13 @@
   font-weight: bold;
 }
 
+.imagenlogin .container {
+  max-width: 40rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  text-shadow: 1px 1px 2px grey;
+}
+
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: 6rem;
