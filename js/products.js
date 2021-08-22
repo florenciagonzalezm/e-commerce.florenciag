@@ -29,8 +29,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                         <p class="mb-1">` + descripcion + `</p>
                     </div>
                 </div>
-            </a>
-            `
+            </a>`
         }
     });
 });
