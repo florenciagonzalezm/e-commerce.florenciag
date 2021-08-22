@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1">`+ nombre +`</h4>
-                            <small class="text-muted">` + moneda + `   ` + costo + `</small>
+                            <small class="text-muted">` + moneda +`  `+ costo + `</small>
                         </div>
                         <p class="mb-1">` + descripcion + `</p>
                     </div>

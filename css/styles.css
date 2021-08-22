@@ -153,26 +153,3 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
-
-
-@media (min-width: 768px) {
-  .imagenlogin {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
-
-.imagenlogin p:last-child {
-  margin-bottom: 0;
-}
-
-.imagenlogin-heading {
-  font-weight: 300;
-}
-
-.imagenlogin .container {
-  max-width: 40rem;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  text-shadow: 1px 1px 2px grey;
-}
