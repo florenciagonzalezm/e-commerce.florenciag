@@ -44,4 +44,7 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+  // Entrega 2 - Utilizo el get para obtener el username y así poder mostrarlo.
+  let addusername = localStorage.getItem("userloggedin");
+  document.getElementById("username").innerHTML = addusername;
 });
