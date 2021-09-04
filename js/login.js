@@ -2,7 +2,7 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-  // Entrega 2 - Al hacer click en el se
+  // Entrega 2 - Al hacer click en el sendBtn se guarda el usuario en el localStorage.
   document.getElementById("sendBtn").onclick = function () {
 
     let username = document.getElementById("username").value;
@@ -12,13 +12,3 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
   }
 });
-
-   // userValidation();
-  //}
-
-  //function userValidation(event) {
-  //event.preventDefault();
-
-  //if (username.length != 0 || password.length != 0) {
-  //window.location.href="indexhome.html";
-  //}
