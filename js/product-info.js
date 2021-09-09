@@ -55,7 +55,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
             error += `<FONT FACE="arial" SIZE=2 COLOR="red"> El comentario debe tener un mensaje y una puntuación.</FONT>`
         } else {    
         error += `Comentario enviado con éxito.`
-
+        document.getElementById("addNewComment").value = "";
+        document.getElementById("selectStars").value = 0;
     }
 
         document.getElementById("mensajeEnviado").innerHTML = error;
