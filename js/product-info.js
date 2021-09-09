@@ -47,12 +47,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     document.getElementById("enviarComentario").addEventListener("click", function(){
         let newCommentDescription = document.getElementById("addNewComment").value;
+        let newCommentScore = document.getElementById("selectStars").value;
+
         let error = "";
 
-        if (newCommentDescription.length == 0) {
-            error += `<FONT FACE="arial" SIZE=2 COLOR="red"> El mensaje no se puede enviar vacío.</FONT>`
+        if (newCommentDescription.length == 0 || newCommentScore == 0) {
+            error += `<FONT FACE="arial" SIZE=2 COLOR="red"> El comentario debe tener un mensaje y una puntuación.</FONT>`
         } else {    
         error += `Comentario enviado con éxito.`
+
     }
 
         document.getElementById("mensajeEnviado").innerHTML = error;
