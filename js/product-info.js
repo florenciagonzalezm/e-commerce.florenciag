@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         });
 
         // Función para que no me permita continuar en caso de no completar ambos (comentario + puntuación)
+        //DESAFIATE ENTREGA 3 - Para que el comentario que enviamos se agregue a la lista de comentarios.
         document.getElementById("enviarComentario").addEventListener("click", function () {
             let newCommentDescription = document.getElementById("addNewComment").value;
             let newCommentScore = document.getElementById("selectStars").value;
@@ -94,11 +95,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
             } else {
                 error += `Comentario enviado con éxito.`
     
-                //DESAFIATE ENTREGA 3 - Para que el comentario que enviamos se agregue a la lista de comentarios.
+
                 let newCommentDescription = document.getElementById("addNewComment").value;
                 let scoreSelect = document.getElementById("selectStars").value;
                 let commentUser = localStorage.getItem("userloggedin");
-                let DateTime = new Date().toLocaleString(); // TO CHECK
+                let DateTime = new Date().toLocaleString();
     
                 let stars = '';
     
