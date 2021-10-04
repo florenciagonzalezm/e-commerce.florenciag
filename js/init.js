@@ -47,4 +47,9 @@ document.addEventListener("DOMContentLoaded", function(e){
   // Entrega 2 - Utilizo el get para obtener el username y así poder mostrarlo.
   let addusername = localStorage.getItem("userloggedin");
   document.getElementById("username").innerHTML = addusername;
+
+  // Entrega 4 - Para que al hacer click me borre el dato del usuario que había guardado antes.
+  document.getElementById("cerrarSesion").onclick = function () {
+    localStorage.removeItem("userloggedin");
+  }
 });
