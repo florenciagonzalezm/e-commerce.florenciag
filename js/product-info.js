@@ -145,9 +145,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
                     .then(info => info.json())
                     .then(data => {
 
-                        let namerelatedProducts = data[relatedProducts].name
-                        let descriprelatedProducts = data[relatedProducts].description
-                        let imgrelatedProducts = data[relatedProducts].imgSrc
+                        let namerelatedProducts = data[relatedProducts].name;
+                        let descriprelatedProducts = data[relatedProducts].description;
+                        let imgrelatedProducts = data[relatedProducts].imgSrc;
                         let pricerelatedProducts = data[relatedProducts].currency + " " + data[relatedProducts].cost;
 
 
