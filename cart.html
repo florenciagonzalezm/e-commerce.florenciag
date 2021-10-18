@@ -42,7 +42,8 @@
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <!-- ENTREGA 4 -->
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="username" style="color:white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="username" style="color:white"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
@@ -52,14 +53,126 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <!--Entrega 5-->
+  <main role="main" class="pb-5">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Carrito de compras</h2>
+      </div>
+      <h4 class="mb-3">Artículos a comprar</h4>
+      <hr class="my-3">
+      <table class="container-fluid">
+        <tr>
+            <th></th>
+            <th>Nombre</th>
+            <th>Costo</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+        </tr>
+        <tr>
+          <td><p id="articleImage" style="width:80px"></p></td>
+          <td><p id="articleName"></p></td>
+          <td><p id="articleCost"></p></td>
+          <td>
+            <p><input class="form-control" type="number" placeholder="Cant." id="articleQ" Style="width:120px" min="0"></p>
+        </td>
+          <td><b><p id="subtotal"></p></b></td>
+      </tr>
+      </table>
+    <hr class="my-3">
+    </table>
+    <form>
+      <form class="needs-validation">
+      <h5 class="mb-3">Tipo de envío</h5>
+      <div class="d-block my-3">
+        <div class="custom-control custom-radio">
+          <input id="envioPremium" name="envioType" type="radio" class="custom-control-input" checked="" required="" value="0.15">
+          <label class="custom-control-label" for="envioPremium">Premium (2-5 días) - Costo 15% sobre el subtotal.</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="envioExpress" name="envioType" type="radio" class="custom-control-input" required="" value="0.07">
+          <label class="custom-control-label" for="envioExpress">Express  (5-8 días) - Costo 7% sobre el subtotal.</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="envioStandard" name="envioType" type="radio" class="custom-control-input" required="" value="0.05">
+          <label class="custom-control-label" for="envioStandard">Standard (12-15 días) - Costo 5% sobre el subtotal.</label>
+        </div>
+      </div>
+    </form>
+
+      <hr class="my-3">
+      <h5 class="mb-3">Dirección de envío</h5>
+      <div class="d-block my-3">
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="calle">Calle</label>
+            <input type="text" class="form-control" id="calle" placeholder="" value="">
+            <div class="invalid-feedback">
+              Se debe ingresar una calle.
+            </div>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="numeroDeCasa">Numero</label>
+            <input type="number" class="form-control" id="numeroDeCasa" placeholder="" value="0" min="0">
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="esquina">Esquina</label>
+          <input type="text" class="form-control" id="esquina" placeholder="" value="">
+          <div class="invalid-feedback">
+            Ingresa una esquina
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+
+      <hr class="mb-4">
+      <h5 class="mb-3">Costos</h5>
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Subtotal</h6>
+            <small class="text-muted">Costo unitario del producto por cantidad</small>
+          </div>
+          <span class="text-muted"><p class="input-area" id="subtotalDos"></p> </span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Costo de envío</h6>
+            <small class="text-muted">Según el tipo de envío</small>
+          </div>
+          <span class="text-muted"><p class="input-area" id="ShippingCost"></p></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Total ($)</span>
+          <strong><p class="input-area" id="totalCost"></p></strong>
+        </li>
+      </ul>
+
+      <hr class="my-3">
+      <div class="row">
+        <div class="col-md-7 mb-3">
+          <h5 class="mb-3">Forma de pago</h5>
+          <select class="custom-select d-block w-100" id="productCategory">
+            <option value="">Elija la forma de pago...</option>
+            <option>Tarjeta de crédito</option>
+            <option>Transferencia bancaria</option>
+          </select>
+          <div class="invalid-feedback">
+            Por favor ingresa una forma de pago válida.
+          </div>
+        </div>
+      </div>
+
+      <hr class="mb-4">
+      <button class="btn btn-primary btn-lg" type="submit">Comprar</button>
+    </form>
+    </div>
+  </main>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
