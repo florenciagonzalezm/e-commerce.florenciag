@@ -50,6 +50,15 @@ document.addEventListener("DOMContentLoaded", function(e){
 
   // Entrega 4 - Para que al hacer click me borre el dato del usuario que había guardado antes.
   document.getElementById("cerrarSesion").onclick = function () {
-    localStorage.removeItem("userloggedin");
+    localStorage.clear();
+
+    /*
+    localStorage.removeItem("nombre1");
+    localStorage.removeItem("nombre2");
+    localStorage.removeItem("apellido1");
+    localStorage.removeItem("apellido2");
+    localStorage.removeItem("email");
+    localStorage.removeItem("telefono");
+    */
   }
 });

@@ -52,14 +52,64 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <main role="main" class="pb-5">
+  <form>
+    <div class="container mt-5">
+      <h4 class="mb-3">Mi perfil</h4>
+      <hr class="my-3">
+      <div class="d-block my-3">
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label>Primer nombre</label>
+            <input type="text" class="form-control" id="nombre1" placeholder="" value="">
+          </div>
+          <div class="col-md-5 mb-3">
+            <label>Segundo nombre</label>
+            <input type="text" class="form-control" id="nombre2" placeholder="" value="">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label>Primer apellido</label>
+            <input type="text" class="form-control" id="apellido1" placeholder="" value="">
+          </div>
+          <div class="col-md-5 mb-3">
+            <label>Segundo apellido</label>
+            <input type="text" class="form-control" id="apellido2" placeholder="" value="">
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label>Email</label>
+          <input type="text" class="form-control" id="emailUs" placeholder="" value="">
+          <div class="invalid-feedback">
+            Ingresa un email
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <label>Teléfono de contacto</label>
+          <input type="number" class="form-control" id="telefono" placeholder="" value="">
+        </div>
+          <div class="col-md-3 mb-3">
+            <label>Edad</label>
+            <input type="number" class="form-control" id="edad" placeholder="" value="">
+          </div>
+      </div>
+
+
     </div>
-  </div>
+      <button class="btn btn-primary btn-lg" type="button" id="guardarCambiosPerfil">Guardar cambios</button>
+    </form>
+    </div>
+  </main>
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
