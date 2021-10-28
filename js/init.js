@@ -52,13 +52,6 @@ document.addEventListener("DOMContentLoaded", function(e){
   document.getElementById("cerrarSesion").onclick = function () {
     localStorage.clear();
 
-    /*
-    localStorage.removeItem("nombre1");
-    localStorage.removeItem("nombre2");
-    localStorage.removeItem("apellido1");
-    localStorage.removeItem("apellido2");
-    localStorage.removeItem("email");
-    localStorage.removeItem("telefono");
-    */
+  
   }
 });
