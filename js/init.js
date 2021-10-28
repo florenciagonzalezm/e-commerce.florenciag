@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function(e){
   document.getElementById("username").innerHTML = addusername;
 
   // Entrega 4 - Para que al hacer click me borre el dato del usuario que había guardado antes.
+  // Entrega 6 - Para que borre todos los datos guardados en mi perfil al cerrar cesión.
   document.getElementById("cerrarSesion").onclick = function () {
     localStorage.clear();
 
