@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
         // Creo el array e igualo cada dato a las variables, que arriba las igualé a el valor que se obtenga
-        // de cada input que esta en el html, transformo a formato JSON.
+        // de cada input que esta en el html.
         let arrayDatosaguardar = {
             "userlogged": usuario,
             "primerNombre": primerNombre,
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             "edad": edad
         };
 
-        // Guardo el array en el localStorage
+        // Guardo el array en el localStorage, transformo el objeto a formato JSON.
         localStorage.setItem('arrayDatosaguardar', JSON.stringify(arrayDatosaguardar));
     };
 
