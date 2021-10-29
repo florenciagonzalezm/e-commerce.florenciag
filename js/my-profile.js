@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
         let usuario = document.getElementById("username").value;
 
 
-        // Creo el array e igualo cada dato a las variables, que arriba las igualé a el valor que se obtenga
+        // Creo el objeto e igualo cada dato a las variables, que arriba las igualé a el valor que se obtenga
         // de cada input que esta en el html.
-        let arrayDatosaguardar = {
+        let objetoDatosaguardar = {
             "userlogged": usuario,
             "primerNombre": primerNombre,
             "segundoNombre": segundoNombre,
@@ -28,20 +28,21 @@ document.addEventListener("DOMContentLoaded", function (e) {
             "edad": edad
         };
 
-        // Guardo el array en el localStorage, transformo el objeto a formato JSON.
-        localStorage.setItem('arrayDatosaguardar', JSON.stringify(arrayDatosaguardar));
+        // Guardo el objeto en el localStorage, transformo el objeto a formato JSON.
+        localStorage.setItem('Datosaguardar', JSON.stringify(objetoDatosaguardar));
     };
 
-    // Obtengo el array para que luego de guardarlo también lo muestre en los inputs.
-    let arrayDatos = JSON.parse(localStorage.getItem('arrayDatosaguardar'));
+    // Obtengo el objeto para que luego de guardarlo también lo muestre en los inputs
+    // Con JSON.parse obtengo los datos que estan en formato JSON.
+    let objetoDatos = JSON.parse(localStorage.getItem('Datosaguardar'));
 
 
-    document.getElementById("nombre1").value = arrayDatos.primerNombre;
-    document.getElementById("nombre2").value = arrayDatos.segundoNombre;
-    document.getElementById("apellido1").value = arrayDatos.primerApellido;
-    document.getElementById("apellido2").value = arrayDatos.segundoApellido;
-    document.getElementById("emailUs").value = arrayDatos.correoElec;
-    document.getElementById("telefono").value = arrayDatos.telefono;
-    document.getElementById("edad").value = arrayDatos.edad;
+    document.getElementById("nombre1").value = objetoDatos.primerNombre;
+    document.getElementById("nombre2").value = objetoDatos.segundoNombre;
+    document.getElementById("apellido1").value = objetoDatos.primerApellido;
+    document.getElementById("apellido2").value = objetoDatos.segundoApellido;
+    document.getElementById("emailUs").value = objetoDatos.correoElec;
+    document.getElementById("telefono").value = objetoDatos.telefono;
+    document.getElementById("edad").value = objetoDatos.edad;
 
 });
