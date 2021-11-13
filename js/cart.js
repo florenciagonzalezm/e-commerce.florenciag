@@ -76,4 +76,40 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 updateShippingCost()
             }
         })
+
+    //ENTREGA 7 - Creo variables para cada ID de los input para luego poder habilitarlos 
+    // o deshabilitarlos en función de la opción de pago seleccionada.
+
+    var tCredito = document.getElementById("credito");
+    var tBancaria = document.getElementById("transfBancaria");
+    var nombreTarjeta = document.getElementById("creditCardName");
+    var numTarjeta = document.getElementById("creditCardNumber");
+    var fechaTarjeta = document.getElementById("expirationDate");
+    var cvvTarjeta = document.getElementById("codigocvv");
+    var banco = document.getElementById("bancoTransferencia");
+    var numCuenta = document.getElementById("numeroDeCuenta");
+
+    updateStatus()
+
+    function updateStatus() {
+      if (tBancaria.checked) {
+        nombreTarjeta.disabled = true;
+        numTarjeta.disabled = true;
+        fechaTarjeta.disabled = true;
+        cvvTarjeta.disabled = true;
+        numCuenta.disabled = false;
+        banco.disabled = false;
+      } else if (tCredito.checked) {
+        numCuenta.disabled = true;
+        banco.disabled = true;
+        nombreTarjeta.disabled = false;
+        numTarjeta.disabled = false;
+        fechaTarjeta.disabled = false;
+        cvvTarjeta.disabled = false;
+      }
+    }
+    
+    tCredito.addEventListener('change', updateStatus)
+    tBancaria.addEventListener('change', updateStatus);
+    
 });
