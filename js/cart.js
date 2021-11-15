@@ -4,6 +4,8 @@
 //ENTREGA 5
 document.addEventListener("DOMContentLoaded", function (e) {
 
+    const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
+
     fetch(CART_INFO_URL)
         .then(info => info.json())
         .then(data => {
@@ -35,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 document.getElementById("articleQ").value = cantidad;
                 document.getElementById("articleQ").innerHTML = cantidad;
                 document.getElementById("subtotal").innerHTML = moneda + " " + subtotal;
+                document.getElementById("subtotalDos").innerHTML = moneda + " " + subtotalDos;
             }
             // Función para actualizar el subtotal que aparece más abajo, luego de cambiar las cantidades.
             function updateQ2() {
@@ -92,24 +95,132 @@ document.addEventListener("DOMContentLoaded", function (e) {
     updateStatus()
 
     function updateStatus() {
-      if (tBancaria.checked) {
-        nombreTarjeta.disabled = true;
-        numTarjeta.disabled = true;
-        fechaTarjeta.disabled = true;
-        cvvTarjeta.disabled = true;
-        numCuenta.disabled = false;
-        banco.disabled = false;
-      } else if (tCredito.checked) {
-        numCuenta.disabled = true;
-        banco.disabled = true;
-        nombreTarjeta.disabled = false;
-        numTarjeta.disabled = false;
-        fechaTarjeta.disabled = false;
-        cvvTarjeta.disabled = false;
-      }
+        if (tBancaria.checked) {
+            nombreTarjeta.disabled = true;
+            numTarjeta.disabled = true;
+            fechaTarjeta.disabled = true;
+            cvvTarjeta.disabled = true;
+            numCuenta.disabled = false;
+            banco.disabled = false;
+        } else if (tCredito.checked) {
+            numCuenta.disabled = true;
+            banco.disabled = true;
+            nombreTarjeta.disabled = false;
+            numTarjeta.disabled = false;
+            fechaTarjeta.disabled = false;
+            cvvTarjeta.disabled = false;
+        } else {
+            numCuenta.disabled = true;
+            banco.disabled = true;
+            nombreTarjeta.disabled = true;
+            numTarjeta.disabled = true;
+            fechaTarjeta.disabled = true;
+            cvvTarjeta.disabled = true;
+        }
     }
-    
-    tCredito.addEventListener('change', updateStatus)
-    tBancaria.addEventListener('change', updateStatus);
-    
+
+    //Para ejecutar la función anterior y me muestre la forma de pago seleccionada en el carrito.
+
+    let seleccionoFormaDePago = "";
+
+    document.getElementById("credito").onchange = function () {
+        updateStatus()
+        seleccionoFormaDePago = this.value;
+        document.getElementById("seleccionarPago").innerHTML = seleccionoFormaDePago;
+        document.getElementById("guardoDatosPago").disabled = true;
+    }
+
+    document.getElementById("transfBancaria").onchange = function () {
+        updateStatus()
+        seleccionoFormaDePago = this.value;
+        document.getElementById("seleccionarPago").innerHTML = seleccionoFormaDePago;
+        document.getElementById("guardoDatosPago").disabled = true;
+    }
+
+    document.getElementById("cerrarDatosPago").onclick = function () {
+        seleccionoFormaDePago = this.value
+        document.getElementById("seleccionarPago").innerHTML = seleccionoFormaDePago;
+    }
+
+
+    // AL CAMBIAR DATOS EN LA FORMA DE PAGO VERIFICO SI TODO ESTA COMPLETO PARA CONTINUAR
+    document.getElementById("codigocvv").onchange = function () {
+        if (seleccionoFormaDePago = "Tarjeta de crédito") {
+            if (nombreTarjeta.value.length != 0 && numTarjeta.value.length != 0 && fechaTarjeta.value.length != 0 && cvvTarjeta.value.length != 0) {
+                document.getElementById("guardoDatosPago").disabled = false;
+            } else {
+                document.getElementById("guardoDatosPago").disabled = true;
+            }
+        }
+    }
+
+    document.getElementById("creditCardName").onchange = function () {
+        if (seleccionoFormaDePago = "Tarjeta de crédito") {
+            if (nombreTarjeta.value.length != 0 && numTarjeta.value.length != 0 && fechaTarjeta.value.length != 0 && cvvTarjeta.value.length != 0) {
+                document.getElementById("guardoDatosPago").disabled = false;
+            } else {
+                document.getElementById("guardoDatosPago").disabled = true;
+            }
+        }
+    }
+
+    document.getElementById("creditCardNumber").onchange = function () {
+        if (seleccionoFormaDePago = "Tarjeta de crédito") {
+            if (nombreTarjeta.value.length != 0 && numTarjeta.value.length != 0 && fechaTarjeta.value.length != 0 && cvvTarjeta.value.length != 0) {
+                document.getElementById("guardoDatosPago").disabled = false;
+            } else {
+                document.getElementById("guardoDatosPago").disabled = true;
+            }
+        }
+    }
+
+    document.getElementById("expirationDate").onchange = function () {
+        if (seleccionoFormaDePago = "Tarjeta de crédito") {
+            if (nombreTarjeta.value.length != 0 && numTarjeta.value.length != 0 && fechaTarjeta.value.length != 0 && cvvTarjeta.value.length != 0) {
+                document.getElementById("guardoDatosPago").disabled = false;
+            } else {
+                document.getElementById("guardoDatosPago").disabled = true;
+            }
+        }
+    }
+
+    document.getElementById("numeroDeCuenta").onchange = function () {
+        if (seleccionoFormaDePago = "Transferencia bancaria") {
+            if (numCuenta.value.length != 0) {
+                document.getElementById("guardoDatosPago").disabled = false;
+            } else {
+                document.getElementById("guardoDatosPago").disabled = true;
+            }
+        }
+    }
+
+    // Creo una función para validar que todo el carrito esté completo.
+    function cartValidation() {
+        let calleEnvio = document.getElementById("calle").value;
+        let numeroDePuerta = document.getElementById("numeroDeCasa").value;
+        let esquina = document.getElementById("esquina").value;
+        let cantidades = document.getElementById("articleQ").value;
+
+        if (calleEnvio.length == 0) {
+            alert("Por favor ingresar una dirección de envío.");
+        } else if (numeroDePuerta.length == 0) {
+            alert("Por favor ingresar un número de puerta.");
+        } else if (esquina.length == 0) {
+            alert("Por favor ingresar la esquina.");
+        } else if (cantidades.length == 0) {
+            alert("Por favor ingresar cantidades");
+        } else if (seleccionoFormaDePago == "") {
+            alert("Por favor seleccionar un medio de pago")
+        }
+        else if (calleEnvio.length > 0 && numeroDePuerta.length > 0 && esquina.length > 0 && seleccionoFormaDePago != "aquí.") {
+            alert("Su compra se ha finalizado con éxito.");
+        }
+    }
+
+    document.getElementById("finalizarCompra").onclick = function () {
+        cartValidation();
+    }
+
+
 });
+

@@ -80,7 +80,8 @@
             <p id="articleCost"></p>
           </td>
           <td>
-            <p><input class="form-control" type="number" placeholder="Cant." id="articleQ" Style="width:120px" min="0" value="" required="">
+            <p><input class="form-control" type="number" placeholder="Cant." id="articleQ" Style="width:120px" min="1"
+                value="" required="">
             </p>
           </td>
           <td><b>
@@ -90,7 +91,6 @@
       </table>
       <hr class="my-3">
       </table>
-      <form>
         <form class="needs-validation">
           <h5 class="mb-3">Tipo de envío</h5>
           <div class="d-block my-3">
@@ -129,7 +129,7 @@
             </div>
             <div class="col-md-2 mb-3">
               <label for="numeroDeCasa">Numero</label>
-              <input type="number" class="form-control" id="numeroDeCasa" placeholder="" value="0" min="0">
+              <input type="number" class="form-control" id="numeroDeCasa" placeholder="" value="" min="0">
             </div>
           </div>
 
@@ -173,15 +173,17 @@
           </li>
         </ul>
 
-<!--Entrega 7-->
+        <!--Entrega 7-->
         <hr class="my-3">
         <div class="row">
           <div class="col-md-7 mb-3">
             <h5 class="mb-3">Forma de pago</h5>
             <div class="d-block my-3">
-              Selecciona tu forma de pago <a data-toggle="modal" type="button" data-target="#Payment" style="color:dimgray" id="mostrarFormaPago">aquí.</a>
+              Selecciona tu forma de pago: <a data-toggle="modal" type="button" data-target="#Payment"
+                style="color:dimgray" id="seleccionarPago" value="">aquí.</a>
               <form>
-                <div class="modal fade" id="Payment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="Payment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -190,7 +192,8 @@
                       <div class="modal-body">
 
                         <div class="custom-control custom-radio">
-                          <input id="credito" value="Tarjeta de crédito" name="tipoDePago" type="radio" class="custom-control-input" checked="" required="">
+                          <input id="credito" value="Tarjeta de crédito" name="tipoDePago" type="radio"
+                            class="custom-control-input" required="">
                           <label class="custom-control-label" for="credito">Tarjeta de crédito</label>
                         </div>
                         <br>
@@ -219,7 +222,8 @@
 
                         <hr class="my-3">
                         <div class="custom-control custom-radio">
-                          <input id="transfBancaria" value="TransferenciaBancaria" name="tipoDePago" type="radio" class="custom-control-input" required="">
+                          <input id="transfBancaria" value="Transferencia bancaria" name="tipoDePago" type="radio"
+                            class="custom-control-input" required="">
                           <label class="custom-control-label" for="transfBancaria">Transferencia bancaria</label>
                         </div>
                         <br>
@@ -251,22 +255,22 @@
 
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary" id="guardoDatosPago">Aceptar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrarDatosPago" value="aquí.">Cancelar</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="guardoDatosPago">Aceptar</button>
                       </div>
                     </div>
                   </div>
                 </div>
               </form>
             </div>
-
-            <hr class="mb-4">
-            <button class="btn btn-primary btn-lg" type="submit">Comprar</button>
+      <form>
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg" type="submit" id="finalizarCompra">Comprar</button>
       </form>
     </div>
   </main>
 
-  
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
